@@ -17,7 +17,10 @@ char	*ft_strdup(const char *s)
 	size_t	len;
 	size_t	i;
 	char	*arr;
-
+		
+	// no need if (!s)
+        //          return (0);
+	//your strdup does not segv with NULL parameter
 	len = ft_strlen(s);
 	arr = (char *)malloc((len + 1) * sizeof(char));
 	if (!arr)
