@@ -23,7 +23,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	if (ptr_des == 0 && ptr_src == 0)
 		return (0);
 	i = 0;
-	while (i < n)
+	while (i < n)// not add && ch_src[i]
 	{
 		*(ptr_des + i) = *(ptr_src + i);
 		i++;
