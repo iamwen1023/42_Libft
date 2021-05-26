@@ -6,7 +6,7 @@
 /*   By: wlo <wlo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:00:43 by wlo               #+#    #+#             */
-/*   Updated: 2021/05/26 13:57:21 by wlo              ###   ########.fr       */
+/*   Updated: 2021/05/26 14:44:32 by wlo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ char	*ft_strnstr(const char	*big, const char *little, size_t len)
 	size_t	i;
 
 	len_little = ft_strlen(little);
-	if (len == 0)
-		return (0);
 	if (len_little == 0)
 		return ((char *)big);
+	if (len == 0)
+		return (0);
 	i = 0;
 	while (i < len && big[i])
 	{
