@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wlo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 14:30:02 by wlo               #+#    #+#             */
-/*   Updated: 2021/05/25 12:29:27 by wlo              ###   ########.fr       */
+/*   Created: 2021/05/25 10:33:27 by wlo               #+#    #+#             */
+/*   Updated: 2021/05/26 13:55:58 by wlo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned char	*ptr_dest;
-	unsigned char	*ptr_src;
-	size_t			i;
+	size_t			len;
+	size_t			index;
+	unsigned char	*ch_s;
 
-	ptr_dest = (unsigned char *)dest;
-	ptr_src = (unsigned char *)src;
-	if (ptr_dest == 0 && ptr_src == 0)
+	ch_s = (unsigned char *)s;
+	if ((*ch_s) == '\0' && c == '\0')
+		return ((char *)ch_s);
+	len = ft_strlen(s);
+	if (len == 0)
 		return (0);
-	i = 0;
-	while (i < n)
+	index = len - 1;
+	while (index > 0)
 	{
-		ptr_dest[i] = ptr_src[i];
-		if (ptr_src[i] == (unsigned char)c)
-			return (dest + i + 1);
-		i++;
+		if (ch_s[index] == (unsigned char)c)
+			return ((char *)&ch_s[index]);
+		index--;
 	}
+	if (ch_s[index] == (unsigned char)c)
+		return ((char *)&ch_s[index]);
+	if (c == 0)
+		return ((char *)&ch_s[len]);
 	return (0);
 }

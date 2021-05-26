@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wlo <marvin@42.fr>                         +#+  +:+       +#+        */
+/*   By: wlo <wlo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 12:08:08 by wlo               #+#    #+#             */
-/*   Updated: 2021/05/25 10:20:43 by wlo              ###   ########.fr       */
+/*   Created: 2021/03/19 15:33:17 by wlo               #+#    #+#             */
+/*   Updated: 2021/05/24 12:31:00 by wlo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_isdigit(int c)
 {
-	unsigned char	*origin;
-	size_t			i;
-
-	origin = (unsigned char *)s;
-	i = 0;
-	while (i < n)
-	{
-		*origin = c;
-		origin++;
-		i++;
-	}
-	return (s);
+	if (c > 47 && c < 58)
+		return (1);
+	return (0);
 }

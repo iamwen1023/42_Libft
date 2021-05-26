@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wlo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 12:52:55 by wlo               #+#    #+#             */
-/*   Updated: 2021/05/24 12:37:27 by wlo              ###   ########.fr       */
+/*   Created: 2021/05/20 12:08:08 by wlo               #+#    #+#             */
+/*   Updated: 2021/05/26 13:37:54 by wlo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char		*ch_dest;
-	unsigned char		*ch_src;
-	size_t				i;
+	unsigned char	*ch_s;
 
-	ch_dest = (unsigned char *)dest;
-	ch_src = (unsigned char *)src;
-	if (ch_dest == 0 && ch_src == 0)
-		return (0);
-	i = 0;
-	while (i < n)
+	ch_s = (unsigned char *)s;
+	while (*ch_s)
 	{
-		ch_dest[i] = ch_src[i];
-		i++;
+		if ((*ch_s) == (unsigned char)c)
+			return ((char *)ch_s);
+		ch_s++;
 	}
-	return (dest);
+	if ((*ch_s) == '\0' && c == '\0')
+		return ((char *)ch_s);
+	return (0);
 }

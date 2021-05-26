@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wlo <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 12:52:55 by wlo               #+#    #+#             */
-/*   Updated: 2021/05/24 12:37:27 by wlo              ###   ########.fr       */
+/*   Created: 2021/05/25 10:30:36 by wlo               #+#    #+#             */
+/*   Updated: 2021/05/25 10:32:37 by wlo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char		*ch_dest;
-	unsigned char		*ch_src;
-	size_t				i;
+	size_t			i;
+	unsigned char	*unsi_s1;
+	unsigned char	*unsi_s2;
 
-	ch_dest = (unsigned char *)dest;
-	ch_src = (unsigned char *)src;
-	if (ch_dest == 0 && ch_src == 0)
-		return (0);
+	unsi_s1 = (unsigned char *)s1;
+	unsi_s2 = (unsigned char *)s2;
 	i = 0;
-	while (i < n)
+	while (i < n && unsi_s1[i] && unsi_s2[i])
 	{
-		ch_dest[i] = ch_src[i];
+		if (unsi_s1[i] != unsi_s2[i])
+			return (unsi_s1[i] - unsi_s2[i]);
 		i++;
 	}
-	return (dest);
+	if ((unsi_s1[i] == '\0' || unsi_s2[i] == '\0') && i < n)
+		return (unsi_s1[i] - unsi_s2[i]);
+	return (0);
 }

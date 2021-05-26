@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wlo <marvin@42.fr>                         +#+  +:+       +#+        */
+/*   By: wlo <wlo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 12:08:08 by wlo               #+#    #+#             */
-/*   Updated: 2021/05/25 10:20:43 by wlo              ###   ########.fr       */
+/*   Created: 2021/03/19 15:35:03 by wlo               #+#    #+#             */
+/*   Updated: 2021/05/24 12:28:56 by wlo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_isalnum(int c)
 {
-	unsigned char	*origin;
-	size_t			i;
-
-	origin = (unsigned char *)s;
-	i = 0;
-	while (i < n)
-	{
-		*origin = c;
-		origin++;
-		i++;
-	}
-	return (s);
+	if ((c > 47 && c < 58) || (c > 64 && c < 91) || (c > 96 && c < 123))
+		return (1);
+	return (0);
 }

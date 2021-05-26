@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wlo <marvin@42.fr>                         +#+  +:+       +#+        */
+/*   By: wlo <wlo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 12:08:08 by wlo               #+#    #+#             */
-/*   Updated: 2021/05/25 10:20:43 by wlo              ###   ########.fr       */
+/*   Created: 2021/03/20 12:48:25 by wlo               #+#    #+#             */
+/*   Updated: 2021/05/25 10:17:48 by wlo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	unsigned char	*origin;
-	size_t			i;
+	t_list		*re;
 
-	origin = (unsigned char *)s;
-	i = 0;
-	while (i < n)
-	{
-		*origin = c;
-		origin++;
-		i++;
-	}
-	return (s);
+	re = (t_list *)malloc(sizeof(t_list));
+	if (!re)
+		return (0);
+	re->content = content;
+	re->next = 0;
+	return (re);
 }
