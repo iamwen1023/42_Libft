@@ -31,6 +31,9 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 
 	s1_1 = (char *)s1;
 	len_s2 = ft_strlen(s2);
+	// nn need to protect s1
+	//if (!s1)
+	//	return 0;
 	if (len_s2 == 0 || len == 0)
 		return (s1_1);
 	while (len > 0)
