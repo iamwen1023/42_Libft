@@ -25,6 +25,7 @@ $(NAME):	$(OBJS) $(INCS)
 all:	$(NAME)
 
 bonus:	$(OBJS_BONUS) $(OBJS) $(INCS)
+		@touch bonus
 		$(AR) $(NAME) $(OBJS) $(OBJS_BONUS)
 
 %.o: %.c
@@ -36,7 +37,7 @@ cleanso:
 		rm *.o
 		rm -f libft.so
 clean:
-		$(RM) $(OBJS)
+		$(RM) $(OBJS) bonus
 
 fclean:		clean
 		$(RM) $(NAME)

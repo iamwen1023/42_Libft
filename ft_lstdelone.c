@@ -6,7 +6,7 @@
 /*   By: wlo <wlo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 12:53:41 by wlo               #+#    #+#             */
-/*   Updated: 2021/05/25 10:16:32 by wlo              ###   ########.fr       */
+/*   Updated: 2021/05/27 11:50:06 by wlo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	if (!lst)
 		return ;
-	(*del)(lst->content);
+	if (del)
+		(*del)(lst->content);
 	free(lst);
 }

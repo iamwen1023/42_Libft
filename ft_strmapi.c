@@ -25,7 +25,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!arr)
 		return (0);
 	index = 0;
-	while (*s && index < len)
+	while (*s && index < len && f)
 	{	
 		arr[index] = f(index, *s);
 		index++;

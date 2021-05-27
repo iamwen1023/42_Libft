@@ -20,14 +20,15 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	if (!(*lst))
 		return ;
 	current = (*lst);
-	while (current->next != 0)
+	while (del && current->next != 0)
 	{
 		(*del)(current->content);
 		temps = current->next;
 		free(current);
 		current = temps;
 	}
-	(*del)(current->content);
+	if (del)
+		(*del)(current->content);
 	free(current);
 	(*lst) = 0;
 }
