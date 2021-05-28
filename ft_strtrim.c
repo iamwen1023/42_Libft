@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdio.h"
 
 int	if_set(char c, char const *set)
 {
